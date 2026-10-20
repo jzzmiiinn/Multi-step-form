@@ -2,7 +2,6 @@ import { plans } from "../data/plans";
 import { addOns } from "../data/addOns";
 
 interface SummaryProps {
-  currentStep: number;
   setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
   selectedPlan: string;
   billingCycle: "monthly" | "yearly";
@@ -10,7 +9,6 @@ interface SummaryProps {
 }
 
 export const Summary = ({
-  currentStep,
   setCurrentStep,
   selectedPlan,
   billingCycle,

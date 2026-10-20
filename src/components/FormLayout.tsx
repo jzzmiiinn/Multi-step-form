@@ -134,7 +134,6 @@ export const FormLayout = ({
     currentStep,
   ]);
 
-  // Validate the personal information before moving to the next step.
   const personalInfoErrors = validatePersonalInfo(personalInfo);
 
   const isPersonalInfoValid = Object.values(personalInfoErrors).every(
@@ -164,7 +163,6 @@ export const FormLayout = ({
     />,
     <Summary
       key="summary"
-      currentStep={currentStep}
       setCurrentStep={setCurrentStep}
       selectedPlan={selectedPlan}
       billingCycle={billingCycle}

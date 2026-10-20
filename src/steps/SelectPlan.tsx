@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { Plan } from "../types/plan";
 
 interface SelectPlanProps {
