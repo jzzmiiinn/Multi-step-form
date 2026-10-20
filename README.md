@@ -1,75 +1,131 @@
-# React + TypeScript + Vite
+# Multi-Step Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive multi-step subscription form built with React, TypeScript, and Tailwind CSS as part of a [Frontend Mentor](https://www.frontendmentor.io/) challenge.
 
-Currently, two official plugins are available:
+The application guides users through entering personal information, choosing a subscription plan, selecting add-ons, and reviewing their order before confirmation. It includes form validation and local storage persistence to preserve progress across page refreshes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Multi-step navigation:** Navigate between personal information, plan selection, add-ons, and summary.
+- **Form validation:** Validate name, email address, and phone number before proceeding.
+- **Subscription plans:** Select a plan and switch between monthly and yearly billing.
+- **Optional add-ons:** Choose additional services for your subscription.
+- **Order summary:** Review selections and return to the plan selection step to make changes.
+- **Local storage:** Save and restore form data and the current step after refreshing the page.
+- **Confirmation screen:** Display a thank-you message after confirming the order.
+- **Responsive design:** Adapt the interface to mobile and desktop screen sizes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- HTML5
+- CSS3
+- Browser Local Storage
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Project Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+Multi-step-form/
+├── design/                 # Challenge design references
+├── public/
+│   ├── fonts/              # Ubuntu font files
+│   ├── bg-sidebar-desktop.svg
+│   ├── bg-sidebar-mobile.svg
+│   ├── favicon-32x32.png
+│   ├── icon-advanced.svg
+│   ├── icon-arcade.svg
+│   ├── icon-checkmark.svg
+│   ├── icon-pro.svg
+│   └── icon-thank-you.svg
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── FormLayout.tsx
+│   │   ├── NavigationButtons.tsx
+│   │   └── Sidebar.tsx
+│   ├── data/
+│   │   ├── addOns.ts
+│   │   └── plans.ts
+│   ├── steps/
+│   │   ├── AddOns.tsx
+│   │   ├── PersonalInfo.tsx
+│   │   ├── SelectPlan.tsx
+│   │   ├── Summary.tsx
+│   │   └── Thankyou.tsx
+│   ├── types/
+│   │   ├── form.ts
+│   │   └── plan.ts
+│   ├── utils/
+│   │   └── validation.ts
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── tsconfig.json
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- [Node.js](https://nodejs.org/)
+- [pnpm](https://pnpm.io/)
 
-```
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/jzzmiiinn/Multi-step-form.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd Multi-step-form
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+5. Open the local development URL shown in your terminal.
+
+## What I Learned
+
+- Building reusable React components with TypeScript.
+- Managing shared state across multiple form steps.
+- Implementing controlled inputs and custom validation.
+- Using TypeScript interfaces to define data structures and component props.
+- Persisting and restoring application state with localStorage.
+- Organizing a React application into components, data, types, and utility modules.
+- Creating responsive layouts with Tailwind CSS.
+
+## Acknowledgments
+
+- [Frontend Mentor](https://www.frontendmentor.io/) for the challenge and design resources.
+
+## Author
+
+**Yasmin Ali**
+
+- GitHub: [@jzzmiiinn](https://github.com/jzzmiiinn)
+
+---
+
+Built with React, TypeScript, and Tailwind CSS as part of my frontend development journey.
